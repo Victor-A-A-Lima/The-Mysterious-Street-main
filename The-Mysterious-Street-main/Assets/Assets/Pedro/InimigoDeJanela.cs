@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InimigoDeJanela : MonoBehaviour
 {
     public Sprite originalSprite;
     public Sprite alertaSprite;
-
+    public UnityEvent loseScreen;
     public float tempoParaMudar = 5f; // Tempo entre mudanças
     public float tempoReacao = 2f;    // Tempo para clicar após mudar
-
     private SpriteRenderer spriteRenderer;
     private bool emAlerta = false;
     private float tempoDesdeMudanca = 0f;
+    public GameObject objetoParaVerificar;
+    public MonoBehaviour scriptParaVerificar;
 
     void Start()
     {
@@ -29,6 +31,14 @@ public class InimigoDeJanela : MonoBehaviour
             {
                 GameOver();
             }
+        }
+        if (objetoParaVerificar.activeInHierarchy)
+        {
+            doorOpen = false;
+        }
+        else
+        {
+
         }
     }
 
@@ -55,11 +65,9 @@ public class InimigoDeJanela : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Game Over!");
-        // Aqui você pode carregar uma nova cena, pausar o jogo, etc.
-        // Por exemplo:
-        // SceneManager.LoadScene("GameOverScene");
-        CancelInvoke(); // Para parar de chamar MudarParaAlerta
-        enabled = false; // Desabilita o script
+
+        loseScreen.Invoke();
+        CancelInvoke(); 
+        enabled = false; 
     }
 }

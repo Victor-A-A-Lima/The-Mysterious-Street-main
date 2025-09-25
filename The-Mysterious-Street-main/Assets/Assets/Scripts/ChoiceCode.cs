@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine.Events;
+
 public class ChoiceCode : MonoBehaviour
 {
     int npcNumber;
@@ -15,6 +16,9 @@ public class ChoiceCode : MonoBehaviour
     public float sceneDelay = 2f;
     bool hasLost = false;
     bool doorOpen = false;
+    public GameObject objetoParaVerificar;
+    public MonoBehaviour scriptParaVerificar;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {    
@@ -36,6 +40,14 @@ public class ChoiceCode : MonoBehaviour
         {
             hasLost = true;
             StartCoroutine(Defeat(sceneDelay));
+        }
+        if (objetoParaVerificar.activeInHierarchy)
+        {
+        doorOpen = false;
+        }
+        else
+        {
+        
         }
     }
     IEnumerator Defeat(float delay)
