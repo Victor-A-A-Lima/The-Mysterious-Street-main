@@ -34,7 +34,7 @@ public class InimigoDeJanela : MonoBehaviour
         }
         if (objetoParaVerificar.activeInHierarchy)
         {
-            doorOpen = false;
+            enabled = false;
         }
         else
         {
