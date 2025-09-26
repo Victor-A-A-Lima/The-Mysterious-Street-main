@@ -43,7 +43,7 @@ public class ChoiceCode : MonoBehaviour
         }
         if (objetoParaVerificar.activeInHierarchy)
         {
-        doorOpen = false;
+            doorOpen = false;
         }
         else
         {
