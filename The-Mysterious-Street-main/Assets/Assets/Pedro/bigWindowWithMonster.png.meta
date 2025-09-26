@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bigWindowWithMonster_0: 556181190190113333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,11 +7,13 @@ public class DialogueInvoker : MonoBehaviour
     public string[] linesMarioMonstro;
     public string[] linesRichard;
     public string[] linesRichardMonstro;
+    public string[] linesDjonesMonstro;
 
     bool interactedMario = true;
     bool interactedMarioMonstro = true;
     bool interactedRichard = true;
     bool interactedRichardMonstro = true;
+    bool interactedDjonesMonstro = true;
     public void Interact(string pessoa)
     {
         if (pessoa == "mario")
@@ -44,6 +46,14 @@ public class DialogueInvoker : MonoBehaviour
             {
                 interactedRichardMonstro = false;
                 TextManager.Instance.StartDialogue(linesRichardMonstro);
+            }
+        }
+        else if (pessoa == "djonesMonstro")
+        {
+            if (interactedDjonesMonstro)
+            {
+                interactedDjonesMonstro = false;
+                TextManager.Instance.StartDialogue(linesDjonesMonstro);
             }
         }
     }
