@@ -7,6 +7,7 @@ public class NpcInvoker : MonoBehaviour
     public GameObject marioMonstro;
     public GameObject richard;
     public GameObject richardMonstro;
+    public GameObject djonesMonstro;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +41,11 @@ public class NpcInvoker : MonoBehaviour
         {
             richardMonstro.SetActive(true);
             dialogueInvoker.Interact("richardMonstro");
+        }
+        else if (x == 5)
+        {
+            djonesMonstro.SetActive(true);
+            dialogueInvoker.Interact("djonesMonstro");
         }
 
     }
