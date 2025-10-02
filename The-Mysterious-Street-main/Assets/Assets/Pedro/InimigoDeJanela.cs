@@ -5,9 +5,8 @@ public class InimigoDeJanela : MonoBehaviour
 {
     public Sprite originalSprite;
     public Sprite alertaSprite;
-    public UnityEvent loseScreen;
-    public float tempoParaMudar = 5f; // Tempo entre mudanças
-    public float tempoReacao = 2f;    // Tempo para clicar após mudar
+    public float tempoParaMudar = 5f; 
+    public float tempoReacao = 2f;    
     private SpriteRenderer spriteRenderer;
     private bool emAlerta = false;
     private float tempoDesdeMudanca = 0f;
