@@ -12,10 +12,12 @@ public class InimigoDeJanela : MonoBehaviour
     private bool emAlerta = false;
     private float tempoDesdeMudanca = 0f;
     public GameObject objetoParaVerificar;
-    public MonoBehaviour scriptParaVerificar;
+    ChoiceCode choiceCode;
 
     void Start()
     {
+        
+        choiceCode = FindFirstObjectByType(typeof(ChoiceCode)) as ChoiceCode;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = originalSprite;
         InvokeRepeating("MudarParaAlerta", tempoParaMudar, tempoParaMudar);
@@ -29,7 +31,7 @@ public class InimigoDeJanela : MonoBehaviour
 
             if (tempoDesdeMudanca >= tempoReacao)
             {
-                GameOver();
+                DanoDoInimigoDaJanela();
             }
         }
         if (objetoParaVerificar.activeInHierarchy)
@@ -63,11 +65,8 @@ public class InimigoDeJanela : MonoBehaviour
         }
     }
 
-    void GameOver()
+    void DanoDoInimigoDaJanela()
     {
-
-        loseScreen.Invoke();
-        CancelInvoke(); 
-        enabled = false; 
+        choiceCode.life -= 45;
     }
 }
